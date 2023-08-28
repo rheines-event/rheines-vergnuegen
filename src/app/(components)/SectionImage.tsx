@@ -8,13 +8,14 @@ import { classNames } from '@rheine/(utils)/classNames';
 type SectionImageProps = {
   src: string;
   align?: 'start' | 'end';
+  className?: string;
 } & (
   { alt: string; caption?: ReactNode; } |
   { alt?: string; caption: string; }
 );
-export function SectionImage({ src, alt, caption, align = 'start' }: SectionImageProps) {
+export function SectionImage({ src, alt, caption, align = 'start', className }: SectionImageProps) {
   return (
-    <div className="w-full h-80 my-8 overflow-hidden">
+    <div className={`${className} w-full h-80 my-8 overflow-hidden`}>
       <figure className={classNames("absolute w-80", align === 'start' ? '-left-px' : '-right-px')}>
         <div className="relative aspect-square">
           <Image

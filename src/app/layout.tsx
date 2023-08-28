@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Bellefair, Forum, Kantumruy_Pro, Spectral } from 'next/font/google';
 
 import { classNames } from '@rheine/(utils)/classNames';
+import { Footer } from './(components)/Footer';
 import { Titlebar } from './(components)/Titlebar';
 
 
@@ -49,6 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       )}>
         <Titlebar className="fixed inset-x-0 top-0 z-50" />
         {children}
+        <Footer />
       </body>
     </html>
   );
