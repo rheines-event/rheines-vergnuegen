@@ -5,8 +5,8 @@ import { Logo } from './Logo';
 
 export function Footer() {
   return (
-    <footer className="relative lg:max-w-4xl lg:mx-auto lg:px-0 flex flex-col px-4 py-16 text-lg text-white bg-[#171717] font-sans">
-      <ul className="py-16">
+    <footer className="relative px-4 py-16 text-lg text-white bg-[#171717] font-sans">
+      <ul className="lg:max-w-4xl lg:mx-auto lg:px-0 flex flex-col py-16">
         <li>
           <Link
             href="/datenschutz"

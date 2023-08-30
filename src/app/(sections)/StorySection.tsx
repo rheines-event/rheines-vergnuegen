@@ -6,7 +6,7 @@ import { classNames } from '@rheine/(utils)/classNames';
 export function StorySection() {
   return (
     <article className={classNames(
-      "relative p-8 space-y-4 lg:max-w-4xl lg:mx-auto",
+      "relative px-8 py-16 space-y-4 lg:max-w-4xl lg:mx-auto",
       "font-display text-slate-800 text-2xl leading-tight tracking-wide"
     )}>
       <p className="first-letter:text-[48px]">

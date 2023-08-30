@@ -39,7 +39,7 @@ function useGhostMode(enabled: boolean): { ghostMode?: boolean } {
 
   useEffect(() => {
     window.onscroll = enabled ? () => {
-      setGhostMode(!(window.scrollY > window.screen.height));
+      setGhostMode(!(window.scrollY > window.innerHeight));
     } : null;
     return () => { window.onscroll = null; }
   }, [enabled]);

@@ -14,20 +14,20 @@ export function HeroTitle() {
   }, []);
 
   return (
-    <div className="w-full px-4 pb-8">
+    <div className="w-full px-8 max-w-full md:max-w-3xl lg:max-w-4xl xl:max-w-6xl 2xl:max-w-full 2xl:px-24 lg:mx-auto lg:px-0 pb-8">
       <motion.h2
         initial={{ opacity: 0, y: 4 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 3, duration: .5, ease: 'easeInOut' }}
-        className="mb-2 text-sm leading-[1.5] text-white font-extralight font-sans">
+        className="text-sm lg:text-xl leading-[1.5] text-white font-extralight font-sans">
         Rheines-Event GmbH präsentiert
       </motion.h2>
       <h1 className="sr-only">Rheines Vergnügen</h1>
-      <h2 className="-mb-8 text-[96px] leading-[1.1] tracking-tighter text-white overflow-hidden">
+      <h2 className="-mb-8 text-[96px] md:text-[128px] lg:text-[160px] leading-[1.1] h-26 md:h-32 lg:h-40 tracking-tighter text-white overflow-hidden">
         <AnimatedLetters text="Rheines" /><br/>
       </h2>
-      <h2 className="pb-24 text-[96px] leading-[1.1] tracking-tighter text-white overflow-hidden">
-        <AnimatedLetters text="Vergnügen" charClassName="" />
+      <h2 className="mb-24 text-[96px] md:text-[128px] lg:text-[160px] leading-[1.1] h-28 md:h-36 lg:h-44 tracking-tighter text-white overflow-hidden">
+        <AnimatedLetters text="Vergnügen" />
       </h2>
       <ChevronDown className={classNames(
         "mx-auto transition-opacity", !animationDone && "opacity-0"
@@ -51,7 +51,7 @@ function AnimatedLetters({ text, charClassName }: { text: string, charClassName?
 
   const letterVariants: Variants = {
     hidden: {
-      y: 128,
+      y: 160,
     },
     visible: {
       y: 0,
@@ -72,7 +72,7 @@ function AnimatedLetters({ text, charClassName }: { text: string, charClassName?
         <motion.span
           transition={{ delay: i * 0.1 }}
           variants={letterVariants}
-          className={charClassName}
+          className={`${charClassName} last:pr-1`}
           key={`${text}-char-at-${i}`}>
           {char}
         </motion.span>

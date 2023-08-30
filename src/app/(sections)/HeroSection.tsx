@@ -1,17 +1,19 @@
-import Image from 'next/image';
-
 import { HeroTitle } from './HeroTitle';
 
 
 export function HeroSection() {
   return (
-    <article className="relative flex flex-col items-center min-h-screen pt-8">
-      <Image
-        src="/hero.jpg"
-        alt="Foto aus dem Inneren der Location"
-        className="object-cover -z-10"
-        fill />
-      <div className="flex-1 pt-24">
+    <article className="relative flex flex-col items-center pt-8 h-screen">
+
+      <video
+        loop
+        muted
+        autoPlay
+        className="absolute h-full w-full object-cover inset-0 -z-10 brightness-50">
+        <source src="/hero.mp4" type="video/mp4" />
+      </video>
+
+      <div className="z-10 flex-1 pt-24">
         <CTOButton />
       </div>
       <HeroTitle />
