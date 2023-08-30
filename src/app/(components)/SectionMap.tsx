@@ -33,7 +33,7 @@ function Map() {
 
   const center = useMemo(() => ({ lat: 44, lng: -80 }), []); 
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? ''
   });
   
   return !isLoaded ? null : (
