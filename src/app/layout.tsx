@@ -41,13 +41,15 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="de" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-      <body className={classNames(
-        bellefair.variable,
-        forum.variable,
-        kantumruyPro.variable,
-        spectral.variable,
-        "relative font-body"
-      )}>
+      <body
+        style={{ padding: 'env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom)' }}
+        className={classNames(
+          bellefair.variable,
+          forum.variable,
+          kantumruyPro.variable,
+          spectral.variable,
+          "relative font-body"
+        )}>
         <Titlebar className="fixed inset-x-0 top-0 z-50" />
         {children}
         <Footer />
