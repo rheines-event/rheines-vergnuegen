@@ -67,6 +67,7 @@ export function Navigation({ opened, onClose, className }: NavigationProps) {
     },
     visible: {
       y: 0,
+      overflow: 'auto',
       transition: {
         duration: .6,
         ease: 'easeInOut',
@@ -86,11 +87,11 @@ export function Navigation({ opened, onClose, className }: NavigationProps) {
             exit="hidden"
             className={classNames(
               className,
-              "flex flex-col gap-y-4 px-4 pb-8 bg-white/90 text-slate-800"
+              "flex flex-col gap-y-4 px-4 pb-8 bg-white/70 backdrop-blur-md text-slate-800 dark:text-white z-50"
             )}>
             <div className="flex w-full justify-between pr-8 py-16">
               <a href="/">
-                <Logo mode="dark" />
+                <Logo mode="responsive" />
               </a>
               <button onClick={onClose}>
                 <XMark className="w-10 h-10" />
@@ -107,7 +108,7 @@ export function Navigation({ opened, onClose, className }: NavigationProps) {
                     variants={wordVariants}>
                     {title.split('').map((char, i) => (
                     <motion.span
-                      className="mb-4 text-[5rem] leading-[.85] tracking-tighter font-body"
+                      className="mb-4 text-[5rem] leading-[.85] tracking-tight -mx-px font-body"
                       transition={{ delay: i * 0.1 }}
                       variants={letterVariants}
                       key={`${title}-char-at-${i}`}>
@@ -129,7 +130,7 @@ export function Navigation({ opened, onClose, className }: NavigationProps) {
                     variants={wordVariants}>
                     {title.split('').map((char, i) => (
                     <motion.span
-                      className="mb-4 text-5xl tracking-tighter font-serif italic font-thin"
+                      className="mb-4 text-5xl tracking-tight -mx-px font-serif italic font-thin"
                       transition={{ delay: i * 0.1 }}
                       variants={letterVariants}
                       key={`${title}-char-at-${i}`}>

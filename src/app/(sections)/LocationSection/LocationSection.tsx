@@ -15,13 +15,14 @@ export function LocationSection() {
 
       <p>
         Die Rheines-Event GmbH verwandelt fünf ehemalige Squash-Courts
-        in einen lebendigen Begegnungsort mit über <span className="font-medium">500 m² Nutzfläche.</span>
+        in einen lebendigen Begegnungsort mit über <span className="font-medium text-white">500 m² Nutzfläche.</span>
       </p>
 
       <SectionImage
         src="/office.jpg"
         alt="Unsere Officeräume"
         align="end"
+        className="mb-8"
         caption={(
           <figcaption className="flex gap-x-2 items-center">
             <MarkerIcon className="w-4 h-4" />
@@ -30,11 +31,11 @@ export function LocationSection() {
         )}
         />
 
-      <p className="py-8">
+      <p>
         Innovativ gestaltete Gruppenräume neben einem Auditorium mit State of the Art Internet-Präsentationstechnik.
       </p>
 
-      <FancyAccordion.Accordion className="w-full -ml-4 mb-16 space-y-2">
+      <FancyAccordion.Accordion className="w-full -ml-4 my-16 lg:my-24 space-y-2">
         <FancyAccordion.Panel title="Herrenzimmer">
           <HerrenzimmerDetails />
         </FancyAccordion.Panel>

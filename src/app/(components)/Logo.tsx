@@ -2,7 +2,7 @@ import { MouseEventHandler } from 'react';
 
 
 type LogoProps = {
-  mode: 'white' | 'dark' | 'blend-difference';
+  mode: 'white' | 'dark' | 'blend-difference' | 'responsive';
   onClick?: MouseEventHandler;
 };
 export function Logo({ mode, onClick }: LogoProps) {
@@ -10,7 +10,8 @@ export function Logo({ mode, onClick }: LogoProps) {
   const style = {
     white: 'text-white',
     dark: 'text-slate-800',
-    'blend-difference': 'mix-blend-difference'
+    'blend-difference': 'mix-blend-difference',
+    responsive: 'text-slate-800 dark:text-white'
   }[mode];
 
   return (

@@ -22,7 +22,7 @@ export function ContactSection() {
 function Address() {
   return (
     <div className="py-16 text-center">
-      <Logo mode="dark" />
+      <Logo mode="responsive" />
       <h4 className="font-body text-3xl">Rheines Vergnügen</h4>
       <a
         href="https://goo.gl/maps/eosGBqKbmJEG2ter5"

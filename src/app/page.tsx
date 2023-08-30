@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
       <HeroSection />
-      <div className="flex flex-col lg:gap-y-6 bg-white -mb-px">
+      <div className="flex flex-col lg:gap-y-6 bg-white dark:bg-[#171717] text-slate-800 dark:text-slate-100 -mb-px">
         <StorySection />
         <ServiceSection />
         <LocationSection />

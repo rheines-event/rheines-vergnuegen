@@ -7,7 +7,7 @@ export function StorySection() {
   return (
     <article className={classNames(
       "relative px-8 py-16 space-y-4 lg:max-w-4xl lg:mx-auto",
-      "font-display text-slate-800 text-2xl leading-tight tracking-wide"
+      "font-display text-2xl leading-tight tracking-wide"
     )}>
       <p className="first-letter:text-[48px]">
         Ursprünglich sollten im Herzen von Rheine in einem ausgedientem Squash Center neue Wohnräume entstehen  - doch es kam anders.
@@ -40,7 +40,7 @@ function BusinessOwnerSignature() {
         height={240}
         width={240}
         className="absolute top-20 rotate-3" />
-      <h4 className="text-lg">Rhichard Rheine</h4>
+      <h4 className="text-lg dark:text-white">Rhichard Rheine</h4>
       <h6 className="text-sm">Geschäftsführer</h6>
     </div>
   );

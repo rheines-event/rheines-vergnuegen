@@ -19,9 +19,9 @@ export function Titlebar({ className }: { className?: string }) {
   return (
     <div>
       {!navigationOpen && (
-        <div className={classNames("w-full h-16 p-4", className)}>
+        <div className={classNames("w-full p-4 lg:p-8", className)}>
           <Logo
-            mode={ghostMode ? 'white' : 'dark'}
+            mode={ghostMode ? 'white' : 'responsive'}
             onClick={() => setNavigationOpen(true)} />
         </div> 
       )}

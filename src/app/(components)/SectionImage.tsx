@@ -15,8 +15,8 @@ type SectionImageProps = {
 );
 export function SectionImage({ src, alt, caption, align = 'start', className }: SectionImageProps) {
   return (
-    <div className={`${className} w-full h-80 my-8 overflow-hidden`}>
-      <figure className={classNames("absolute w-80", align === 'start' ? '-left-px' : '-right-px')}>
+    <div className={`${className} relative w-full my-8 md:my-16 lg:my-24`}>
+      <figure className={classNames("w-9/12 sm:w-7/12", align === 'start' ? '-ml-4 lg:-ml-32' : 'ml-auto -mr-4 lg:-mr-32')}>
         <div className="relative aspect-square">
           <Image
             fill

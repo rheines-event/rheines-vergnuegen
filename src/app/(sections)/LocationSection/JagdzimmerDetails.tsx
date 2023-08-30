@@ -6,7 +6,7 @@ export function JagdzimmerDetails() {
       
       <p className="py-8">
         Die Rheines-Event GmbH verwandelt fünf ehemalige Squash-Courts
-        in einen lebendigen Begegnungsort mit über <span className="font-medium">500 m² Nutzfläche.</span>
+        in einen lebendigen Begegnungsort mit über <span className="font-medium text-white">500 m² Nutzfläche.</span>
       </p>
       
       <SectionImage
