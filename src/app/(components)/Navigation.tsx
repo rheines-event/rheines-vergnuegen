@@ -87,12 +87,12 @@ export function Navigation({ opened, onClose, className }: NavigationProps) {
             exit="hidden"
             className={classNames(
               className,
-              "flex flex-col gap-y-4 px-4 pb-8 bg-white/70 backdrop-blur-md text-slate-800 dark:text-white z-50"
+              "flex flex-col gap-y-4 px-4 pb-8 bg-white/70 dark:bg-[#171717]/70 backdrop-blur-md text-slate-800 dark:text-white z-50"
             )}>
             <div className="flex w-full justify-between pr-8 py-16">
-              <a href="/">
+              <Link href="/">
                 <Logo mode="responsive" />
-              </a>
+              </Link>
               <button onClick={onClose}>
                 <XMark className="w-10 h-10" />
               </button>

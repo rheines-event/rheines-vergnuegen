@@ -42,7 +42,7 @@ function Address() {
 
 function OpeningTimes() {
   return (
-    <div className="px-4">
+    <div className="px-4 py-8 lg:py-16">
       <h6 className="mb-4 font-semibold dark:text-white">Öffnungszeiten</h6>
       <div className="flex justify-between items-center">
         <span>Montag</span>
