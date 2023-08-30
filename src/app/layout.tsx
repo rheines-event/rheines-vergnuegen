@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="de">
+    <html lang="de" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
       <body className={classNames(
         bellefair.variable,
         forum.variable,
