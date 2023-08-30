@@ -14,7 +14,7 @@ export function HeroTitle() {
   }, []);
 
   return (
-    <div className="w-full px-8 max-w-full md:max-w-3xl lg:max-w-4xl xl:max-w-6xl 2xl:max-w-full 2xl:px-24 lg:mx-auto lg:px-0 pb-8">
+    <div className="z-10 w-full px-8 max-w-full md:max-w-3xl lg:max-w-4xl xl:max-w-6xl 2xl:max-w-full 2xl:px-24 lg:mx-auto lg:px-0 pb-8">
       <motion.h2
         initial={{ opacity: 0, y: 4 }}
         animate={{ opacity: 1, y: 0 }}

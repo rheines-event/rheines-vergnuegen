@@ -37,7 +37,7 @@ function ContactFormImplementation({ onSubmit, defaultReason = 'inquiry' }: { de
           id="reason"
           name="reason"
           onChange={({ currentTarget }) => setReason(currentTarget.value as Reason)}
-          className="placeholder-gray-400 font-medium m-4 focus:outline-none"
+          className="placeholder-gray-400 font-medium m-4 focus:outline-none bg-white"
           value={reason ?? defaultReason}
           placeholder="Betreff">
           <option value="inquiry">Frage</option>

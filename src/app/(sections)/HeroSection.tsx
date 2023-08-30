@@ -12,7 +12,7 @@ export function HeroSection() {
         muted
         autoPlay
         playsInline
-        className="absolute h-full w-full object-cover inset-0 -z-10 brightness-50">
+        className="absolute h-full w-full object-cover inset-0 brightness-50">
         <source src="/hero.mp4" type="video/mp4" />
       </video>
 
