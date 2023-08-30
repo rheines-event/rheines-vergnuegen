@@ -44,7 +44,7 @@ export function NewsletterSubsection() {
 
         <button
           type="submit"
-          className="text-[#171717] group-invalid:pointer-events-none group-invalid:text-gray-400 group-invalid:cursor-not-allowed ml-auto mr-4 tracking-tighter leading-tight flex text-2xl items-center">
+          className="text-[#171717] group-invalid:pointer-events-none group-invalid:text-gray-400 group-invalid:cursor-not-allowed ml-auto mr-4 hover:mr-2 transition-[margin-right] tracking-tighter leading-tight flex text-2xl items-center">
           <span>Jetzt registrieren</span>
           <svg
             className="inline-block ml-2"

@@ -23,10 +23,10 @@ export function HeroTitle() {
         Rheines-Event GmbH präsentiert
       </motion.h2>
       <h1 className="sr-only">Rheines Vergnügen</h1>
-      <h2 className="-mb-8 text-[96px] md:text-[128px] lg:text-[160px] leading-[1.1] h-26 md:h-32 lg:h-40 tracking-tighter text-white overflow-hidden">
+      <h2 className="-mb-8 text-[80px] sm:text-[96px] md:text-[128px] lg:text-[160px] leading-[1.1] h-26 md:h-32 lg:h-40 tracking-tighter text-white overflow-hidden">
         <AnimatedLetters text="Rheines" /><br/>
       </h2>
-      <h2 className="mb-24 text-[96px] md:text-[128px] lg:text-[160px] leading-[1.1] h-28 md:h-36 lg:h-44 tracking-tighter text-white overflow-hidden">
+      <h2 className="mb-24 text-[80px] sm:text-[96px] md:text-[128px] lg:text-[160px] leading-[1.1] h-28 md:h-36 lg:h-44 tracking-tighter text-white overflow-hidden">
         <AnimatedLetters text="Vergnügen" />
       </h2>
       <ChevronDown className={classNames(
