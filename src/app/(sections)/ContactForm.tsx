@@ -31,13 +31,13 @@ function ContactFormImplementation({ onSubmit, defaultReason = 'inquiry' }: { de
         if (onSubmit) { onSubmit(formValue); }
       }}>
 
-      <div className="flex flex-col border border-[#171717] mb-16">
+      <div className="flex flex-col border border-[#171717] dark:border-white mb-16">
         <label className="hidden" htmlFor="name">Betreff</label>
         <select
           id="reason"
           name="reason"
           onChange={({ currentTarget }) => setReason(currentTarget.value as Reason)}
-          className="placeholder-gray-400 font-medium m-4 focus:outline-none bg-white"
+          className="font-medium py-4 mx-4 focus:outline-none dark:bg-[#171717] bg-white"
           value={reason ?? defaultReason}
           placeholder="Betreff">
           <option value="inquiry">Frage</option>
@@ -45,14 +45,14 @@ function ContactFormImplementation({ onSubmit, defaultReason = 'inquiry' }: { de
           <option value="other">Sonstiges</option>
         </select>
 
-        <div className="relative w-full border-y border-[#171717]">
+        <div className="relative w-full border-y border-[#171717] dark:border-white">
           <label className="hidden" htmlFor="email">Betreff</label>
           <input
             id="email"
             type="email"
             name="email"
             required
-            className="peer w-full p-4 focus:outline-none"
+            className="peer w-full p-4 focus:outline-none dark:placeholder:text-slate-100 dark:bg-[#171717]"
             placeholder="Email Adresse" />
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +77,7 @@ function ContactFormImplementation({ onSubmit, defaultReason = 'inquiry' }: { de
           required
           id="content"
           name="content"
-          className="p-4 min-h-[128px] focus:outline-none" 
+          className="p-4 min-h-[128px] focus:outline-none dark:placeholder:text-slate-100 dark:bg-[#171717]" 
           placeholder="Ihr Anliegen" />
       </div>
       

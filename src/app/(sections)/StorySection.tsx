@@ -6,7 +6,7 @@ import { classNames } from '@rheine/(utils)/classNames';
 export function StorySection() {
   return (
     <article className={classNames(
-      "relative px-8 py-16 space-y-4 lg:max-w-4xl lg:mx-auto",
+      "relative px-8 py-16 space-y-4 lg:pt-32 lg:max-w-4xl lg:mx-auto",
       "font-display text-2xl leading-tight tracking-wide"
     )}>
       <p className="first-letter:text-[48px]">
@@ -16,7 +16,7 @@ export function StorySection() {
         Wie alle machten auch wir die lähmenden Erfahrungen der fast dreijährigen Covid 19-Pandemie mit ihren tiefgreifenden Einschränkungen im Privaten wie Beruflichen. Menschen interessieren sich für Menschen, wollen sich treffen, interagieren -
 nicht digital und virtuell, sondern real und von Angesicht zu Angesicht. 
       </p>
-      <div className="py-12">
+      <div className="py-12 lg:py-32">
         <BusinessOwnerSignature />
       </div>
     </article>

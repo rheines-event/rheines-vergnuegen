@@ -5,7 +5,7 @@ import { HeroTitle } from './HeroTitle';
 
 export function HeroSection() {
   return (
-    <article className="relative flex flex-col items-center pt-8 h-screen">
+    <article className="relative flex flex-col justify-between items-center pt-8 min-h-[560px] h-screen">
 
       <video
         loop
@@ -16,7 +16,7 @@ export function HeroSection() {
         <source src="/hero.mp4" type="video/mp4" />
       </video>
 
-      <div className="z-30 flex-1 pt-24">
+      <div className="z-30 my-24 lg:my-28">
         <CTOButton />
       </div>
 

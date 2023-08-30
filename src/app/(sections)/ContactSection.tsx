@@ -1,17 +1,22 @@
 import { MarkerIcon } from '@rheine/app/(components)/MarkerIcon';
 import { SectionTitle } from '@rheine/app/(components)/SectionTitle';
 import { Logo } from '../(components)/Logo';
+import { SectionMap } from '../(components)/SectionMap';
 
 
 export function ContactSection() {
   return (
-    <article className="relative lg:max-w-4xl lg:mx-auto lg:px-0 flex flex-col px-4 py-16 text-lg font-sans">
+    <article className="relative lg:max-w-4xl lg:mx-auto lg:px-0 my-8 md:my-16 lg:my-24 flex flex-col px-4 py-16 text-lg font-sans">
       
       <SectionTitle id="contact">Kontakt</SectionTitle>
 
       <p className="hyphens-auto">Sie würden gerne unsere <span className="font-medium">Location besichtigen oder uns einfach nur kennenlernen?</span> Dann schauen Sie gern  vor Ort bei uns vorbei!</p>
 
-      <Address />
+      <SectionMap align="end" alt="Unsere Location auf Google Maps">
+        <div className="z-30 w-full flex items-center justify-center xl:justify-start">
+          <Address />
+        </div>
+      </SectionMap>
       <OpeningTimes />
 
     </article>
@@ -38,7 +43,7 @@ function Address() {
 function OpeningTimes() {
   return (
     <div className="px-4">
-      <h6 className="mb-4 font-semibold">Öffnungszeiten</h6>
+      <h6 className="mb-4 font-semibold dark:text-white">Öffnungszeiten</h6>
       <div className="flex justify-between items-center">
         <span>Montag</span>
         <span>09:00 - 20:00</span>
