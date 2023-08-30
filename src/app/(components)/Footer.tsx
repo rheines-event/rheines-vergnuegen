@@ -10,14 +10,14 @@ export function Footer() {
         <li>
           <Link
             href="/datenschutz"
-            className="mb-8 text-5xl tracking-tight font-serif font-light italic">
+            className="mb-8 text-4xl tracking-tight font-serif font-light italic">
             Datenschutz
           </Link>
         </li>
         <li>
           <a
             href="/impressum"
-            className="mb-8 text-5xl tracking-tight font-serif font-light italic">
+            className="mb-8 text-4xl tracking-tight font-serif font-light italic">
             Impressum
           </a>
         </li>
