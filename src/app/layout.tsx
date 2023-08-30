@@ -36,14 +36,14 @@ const spectral = Spectral({
 export const metadata: Metadata = {
   title: 'Rheines Vergnügen',
   description: 'Ihre exklusive Event-Location in Rheine',
-  viewport: 'width=device-width, initial-scale=1.0, viewport-fit=cover',
+  viewport: 'height=device-height, width=device-width, initial-scale=1.0, viewport-fit=cover',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="de">
       <body
-        style={{ margin: 'env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom)' }}
+        // style={{ margin: 'env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom)' }}
         className={classNames(
           bellefair.variable,
           forum.variable,
