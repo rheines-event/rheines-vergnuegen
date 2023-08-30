@@ -42,7 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="de" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
       <body
-        style={{ padding: 'env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom)' }}
+        style={{ margin: 'env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom)' }}
         className={classNames(
           bellefair.variable,
           forum.variable,
