@@ -14,6 +14,7 @@ export function HeroSection() {
         playsInline
         className="absolute h-full w-full mt-[-env(safe-area-inset-top)] object-cover inset-0 brightness-50">
         <source src="/hero.mp4" type="video/mp4" />
+        <img src="/hero-thumbnail.jpg" alt="Video Thumbnail" />
       </video>
 
       <div className="z-30 my-24 lg:my-28">
