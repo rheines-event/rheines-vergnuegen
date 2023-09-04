@@ -21,7 +21,7 @@ export function Panel({ value, title, children }: PropsWithChildren<{ value?: st
   return (
     <RadixAccordion.Item value={value ?? title}>
       <RadixAccordion.Header
-        className="py-2 text-5xl font-body border-b border-slate-800 dark:border-white dark:text-white">
+        className="py-2 lg:py-4 text-5xl font-body border-b border-slate-800 dark:border-white dark:text-white">
         <RadixAccordion.Trigger className="group w-full flex gap-x-2 items-center justify-between">
           <span className="ml-4">{title}</span>
           <PlusMinusIcon className="w-8 h-8" aria-hidden />

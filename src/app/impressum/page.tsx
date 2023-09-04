@@ -1,7 +1,7 @@
 
 export default function Imprint() {
   return (
-    <main className="flex flex-col lg:max-w-4xl xl:max-w-6xl lg:mx-auto min-h-screen px-4 pt-12 pb-32 text-slate-800 font-sans">
+    <main className="flex flex-col lg:max-w-4xl xl:max-w-6xl lg:mx-auto min-h-screen lg:px-0 px-4 pt-12 pb-32 dark:bg-[#171717] text-slate-800 dark:text-slate-100 font-sans">
 
       <h2 className="my-16 text-6xl tracking-tighter font-serif italic font-light">
         Impressum
