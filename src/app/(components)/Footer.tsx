@@ -22,7 +22,7 @@ export function Footer() {
           </a>
         </li>
       </ul>
-      <div className="flex flex-col gap-4 items-center py-6">
+      <div className="flex flex-col gap-4 items-center py-6 pointer-events-none">
         <Logo mode="white" />
         <span className="font-light">© {new Date().getFullYear()} Rheines-Event GmbH</span>
       </div>

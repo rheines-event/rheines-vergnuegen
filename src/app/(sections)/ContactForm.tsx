@@ -37,7 +37,7 @@ function ContactFormImplementation({ onSubmit, defaultReason = 'inquiry' }: { de
           id="reason"
           name="reason"
           onChange={({ currentTarget }) => setReason(currentTarget.value as Reason)}
-          className="font-medium py-4 mx-4 focus:outline-none dark:bg-[#171717] bg-white"
+          className="font-medium m-4 focus:outline-none dark:bg-[#171717] bg-white"
           value={reason ?? defaultReason}
           placeholder="Betreff">
           <option value="inquiry">Frage</option>
@@ -52,7 +52,7 @@ function ContactFormImplementation({ onSubmit, defaultReason = 'inquiry' }: { de
             type="email"
             name="email"
             required
-            className="peer w-full p-4 focus:outline-none dark:placeholder:text-slate-100 dark:bg-[#171717]"
+            className="peer w-full p-4 focus:outline-none dark:text-[#171717] dark:placeholder:text-slate-100 dark:bg-[#171717]"
             placeholder="Email Adresse" />
           <svg
             xmlns="http://www.w3.org/2000/svg"
