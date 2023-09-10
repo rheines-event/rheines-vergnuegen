@@ -81,19 +81,21 @@ function ContactFormImplementation({ onSubmit, defaultReason = 'inquiry' }: { de
           placeholder="Ihr Anliegen" />
       </div>
       
-      <button
-        type="submit"
-        className="text-[#171717] group-invalid:pointer-events-none group-invalid:text-gray-400 group-invalid:cursor-not-allowed ml-auto mr-4 hover:mr-2 transition-[margin-right] tracking-tighter leading-tight flex text-2xl items-center">
-        <span>Absenden</span>
-        <svg
-          className="inline-block ml-2"
-          width="20"
-          height="12"
-          viewBox="0 0 20 12"
-          fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M13 1L19 6M19 6L13 11M19 6H0" stroke="currentColor" />
-        </svg>
-      </button>
+      <div className="group-invalid:cursor-not-allowed">
+        <button
+          type="submit"
+          className="text-[#171717] group-invalid:pointer-events-none group-invalid:text-gray-400 ml-auto mr-4 hover:mr-2 transition-[margin-right] tracking-tighter leading-tight flex text-2xl items-center">
+          <span>Absenden</span>
+          <svg
+            className="inline-block ml-2"
+            width="20"
+            height="12"
+            viewBox="0 0 20 12"
+            fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 1L19 6M19 6L13 11M19 6H0" stroke="currentColor" />
+          </svg>
+        </button>
+      </div>
       
     </form>
   );

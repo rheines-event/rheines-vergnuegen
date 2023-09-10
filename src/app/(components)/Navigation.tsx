@@ -13,7 +13,7 @@ import { Logo } from './Logo';
 
 const LINKS = {
   primary: [
-    { href: '/#service', title: 'Service' },
+    { href: '/#vision', title: 'Vision' },
     { href: '/#location', title: 'Location' },
     { href: '/#contact', title: 'Kontakt' }
   ],

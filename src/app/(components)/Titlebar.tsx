@@ -19,8 +19,8 @@ export function Titlebar({ className }: { className?: string }) {
   return (
     <div>
       {!navigationOpen && (
-        <div className={classNames("w-full p-4 lg:p-8", className)}>
-          <button onClick={() => setNavigationOpen(true)}>
+        <div className={classNames("w-full p-4 pointer-events-none lg:p-8", className)}>
+          <button className="pointer-events-auto" onClick={() => setNavigationOpen(true)}>
             <Logo mode={ghostMode ? 'white' : 'responsive'} />
           </button>
         </div> 

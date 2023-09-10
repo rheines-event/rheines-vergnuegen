@@ -34,7 +34,7 @@ const spectral = Spectral({
 });
 
 export const metadata: Metadata = {
-  title: 'Rheines Vergnügen',
+  title: 'R(h)eines Vergnügen',
   description: 'Ihre exklusive Event-Location in Rheine',
   viewport: 'height=device-height, width=device-width, initial-scale=1.0, viewport-fit=cover',
 }

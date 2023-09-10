@@ -9,13 +9,15 @@ export function StorySection() {
       "relative px-8 py-16 space-y-4 lg:pt-32 lg:max-w-4xl lg:mx-auto",
       "font-display text-2xl leading-tight tracking-wide"
     )}>
-      <p className="first-letter:text-[48px]">
-        Ursprünglich sollten im Herzen von Rheine in einem ausgedientem Squash Center neue Wohnräume entstehen  - doch es kam anders.
-      </p>
+
+      <p className="mb-2 first-letter:text-[48px]">Wir sind die Rheines-Event GmbH.</p>
       <p>
-        Wie alle machten auch wir die lähmenden Erfahrungen der fast dreijährigen Covid 19-Pandemie mit ihren tiefgreifenden Einschränkungen im Privaten wie Beruflichen. Menschen interessieren sich für Menschen, wollen sich treffen, interagieren -
-nicht digital und virtuell, sondern real und von Angesicht zu Angesicht. 
+        Ein junges Unternehmen mit dem ehrgeizigen Ziel,
+        Menschen, ihren Ideen und ihrem Miteinander zeitgemäße Räume zu bieten.
+        Wir schaffen Platz für Gestalter, Gespräche & Genuss in stilvollem Ambiente, in dem Geschäftliches 
+        wie auch Privates einen neuen ansprechenden Rahmen bekommen.   
       </p>
+
       <div className="py-12 lg:py-32">
         <BusinessOwnerSignature />
       </div>
@@ -28,7 +30,7 @@ function BusinessOwnerSignature() {
     <div className="relative flex flex-col items-center">
       <div className="relative w-32 h-32 mb-3 rounded-full overflow-hidden">
         <Image
-          src="/business-owner.jpg"
+          src="/business-owner.png"
           alt="Business Owner"
           fill
           sizes="(max-width: 640px) 256px, 128px"
@@ -39,8 +41,8 @@ function BusinessOwnerSignature() {
         alt="Business Owner Signature"
         height={240}
         width={240}
-        className="absolute top-20 rotate-3" />
-      <h4 className="text-lg dark:text-white">Rhichard Rheine</h4>
+        className="absolute top-20 -rotate-3" />
+      <h4 className="text-lg dark:text-white">Robert Graefe</h4>
       <h6 className="text-sm">Geschäftsführer</h6>
     </div>
   );

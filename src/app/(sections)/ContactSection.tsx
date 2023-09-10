@@ -1,7 +1,7 @@
 import { MarkerIcon } from '@rheine/app/(components)/MarkerIcon';
 import { SectionTitle } from '@rheine/app/(components)/SectionTitle';
-import { Logo } from '../(components)/Logo';
-import { SectionMap } from '../(components)/SectionMap';
+import { Logo } from '@rheine/app/(components)/Logo';
+import { PhoneIcon } from '@rheine/app/(components)/PhoneIcon';
 
 
 export function ContactSection() {
@@ -12,11 +12,7 @@ export function ContactSection() {
 
       <p className="hyphens-auto">Sie würden gerne unsere <span className="font-medium">Location besichtigen oder uns einfach nur kennenlernen?</span> Dann schauen Sie gern  vor Ort bei uns vorbei!</p>
 
-      <SectionMap align="end" alt="Unsere Location auf Google Maps">
-        <div className="z-30 w-full flex items-center justify-center xl:justify-start">
-          <Address />
-        </div>
-      </SectionMap>
+      <Address />
       <OpeningTimes />
 
     </article>
@@ -26,15 +22,21 @@ export function ContactSection() {
 
 function Address() {
   return (
-    <div className="py-16 text-center">
+    <div className="flex flex-col pt-24 items-center">
       <Logo mode="responsive" />
-      <h4 className="font-body text-3xl">Rheines Vergnügen</h4>
+      <h4 className="font-body text-3xl">R(h)eines Vergnügen</h4>
       <a
         href="https://goo.gl/maps/eosGBqKbmJEG2ter5"
         className="inline-flex gap-x-2 items-center underline underline-offset-4">
         <MarkerIcon className="w-4 h-4" />
         <span className="font-sans font-light text-lg">Hafenbahn 12, 848431 Rheine</span>
       </a>
+      <p className="flex w-fit gap-x-2 items-center font-light text-lg mt-2">
+        <PhoneIcon className="w-4 h-4" />
+        <span>
+          +49 (0) 173 9525696
+        </span>
+      </p>
     </div>
   );
 }
@@ -46,11 +48,7 @@ function OpeningTimes() {
       <h6 className="mb-4 font-semibold dark:text-white">Öffnungszeiten</h6>
       <div className="flex justify-between items-center">
         <span>Montag</span>
-        <span>09:00 - 20:00</span>
-      </div>
-      <div className="flex justify-between items-center">
-        <span>Dienstag</span>
-        <span>09:00 - 20:00</span>
+        <span>08:00 - 24:00</span>
       </div>
     </div>
   );

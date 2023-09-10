@@ -22,9 +22,9 @@ export function HeroTitle() {
         className="text-sm lg:text-xl leading-[1.5] text-white font-extralight font-sans">
         Rheines-Event GmbH präsentiert
       </motion.h2>
-      <h1 className="sr-only">Rheines Vergnügen</h1>
+      <h1 className="sr-only">R(h)eines Vergnügen</h1>
       <h2 className="w-fit relative -mb-8 text-[80px] sm:text-[96px] md:text-[128px] lg:text-[160px] leading-[1.1] h-26 md:h-32 lg:h-40 tracking-tighter text-white">
-        <AnimatedLetters text="Rheines" charClassName="z-10" /><br/>
+        <AnimatedLetters text="R(h)eines" charClassName="z-10" /><br/>
         <motion.svg
           aria-hidden="true"
           viewBox="0 0 418 42"

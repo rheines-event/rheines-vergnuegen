@@ -3,7 +3,10 @@ import { SectionTitle } from '@rheine/app/(components)/SectionTitle';
 import { MarkerIcon } from '@rheine/app/(components)/MarkerIcon';
 
 import * as FancyAccordion from './FancyAccordion';
-import { HerrenzimmerDetails } from './HerrenzimmerDetails';
+import { AmphitheaterDetails } from './AmphitheaterDetails';
+import { ClubraumDetails } from './ClubraumDetails';
+import { EventkuecheDetails } from './Eventkueche';
+import { OpenSpaceDetails } from './OpenSpaceDetails';
 import { JagdzimmerDetails } from './JagdzimmerDetails';
 
 
@@ -14,7 +17,7 @@ export function LocationSection() {
       <SectionTitle id="location">Location</SectionTitle>
 
       <p>
-        Die Rheines-Event GmbH verwandelt fünf ehemalige Squash-Courts
+        Die R(h)eines-Event GmbH verwandelt fünf ehemalige Squash-Courts
         in einen lebendigen Begegnungsort mit über <span className="font-medium text-white">500 m² Nutzfläche.</span>
       </p>
 
@@ -36,11 +39,20 @@ export function LocationSection() {
       </p>
 
       <FancyAccordion.Accordion className="w-full -ml-4 my-16 lg:my-24 space-y-2">
-        <FancyAccordion.Panel title="Herrenzimmer">
-          <HerrenzimmerDetails />
+        <FancyAccordion.Panel title="Clubraum">
+          <ClubraumDetails />
         </FancyAccordion.Panel>
         <FancyAccordion.Panel title="Jagdzimmer">
           <JagdzimmerDetails />
+        </FancyAccordion.Panel>
+        <FancyAccordion.Panel title="Eventküche">
+          <EventkuecheDetails />
+        </FancyAccordion.Panel>
+        <FancyAccordion.Panel title="Amphitheater">
+          <AmphitheaterDetails />
+        </FancyAccordion.Panel>
+        <FancyAccordion.Panel title="Open Space">
+          <OpenSpaceDetails />
         </FancyAccordion.Panel>
       </FancyAccordion.Accordion>
 

@@ -1,5 +1,4 @@
 import { SectionImage } from '../(components)/SectionImage';
-
 import { SectionTitle } from '../(components)/SectionTitle';
 
 
@@ -7,10 +6,10 @@ export function ServiceSection() {
   return (
     <article className="relative lg:max-w-4xl lg:mx-auto lg:px-0 flex flex-col px-4 py-16 text-lg font-sans">
 
-      <SectionTitle id="service">Service</SectionTitle>
+      <SectionTitle id="vision">Vision</SectionTitle>
 
       <p>
-        Die Rheines-Event GmbH verwandelt fünf ehemalige Squash-Courts
+        Die R(h)eines-Event GmbH verwandelt fünf ehemalige Squash-Courts
         in einen lebendigen Begegnungsort mit über <span className="font-medium text-white">500 m² Nutzfläche.</span>
       </p>
 
