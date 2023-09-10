@@ -17,8 +17,8 @@ export function LocationSection() {
       <SectionTitle id="location">Location</SectionTitle>
 
       <p>
-        Die R(h)eines-Event GmbH verwandelt fünf ehemalige Squash-Courts
-        in einen lebendigen Begegnungsort mit über <span className="font-medium text-white">500 m² Nutzfläche.</span>
+        Die Rheines-Event GmbH verwandelt fünf ehemalige Squash-Courts
+        in einen lebendigen Begegnungsort mit über <span className="font-medium dark:text-white">500 m² Nutzfläche.</span>
       </p>
 
       <SectionImage

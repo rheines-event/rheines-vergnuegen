@@ -24,7 +24,7 @@ function Address() {
   return (
     <div className="flex flex-col pt-24 items-center">
       <Logo mode="responsive" />
-      <h4 className="font-body text-3xl">R(h)eines Vergnügen</h4>
+      <h4 className="font-body text-3xl mt-4">R(h)eines Vergnügen</h4>
       <a
         href="https://goo.gl/maps/eosGBqKbmJEG2ter5"
         className="inline-flex gap-x-2 items-center underline underline-offset-4">
