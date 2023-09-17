@@ -2,14 +2,22 @@
 
 import { PropsWithChildren } from 'react';
 
+import { useSearchParams } from 'next/navigation';
 import * as RadixAccordion from '@radix-ui/react-accordion';
 
 
-export function Accordion({ children, className }: PropsWithChildren<{ className?: string }>) {
+export function Accordion({ children, className, searchParamName }: PropsWithChildren<{ className?: string, searchParamName?: string }>) {
+  
+  const params = useSearchParams();
+  const openedSection = searchParamName ?
+    params.get(searchParamName) ?? undefined :
+    undefined;
+
   return (
     <RadixAccordion.Root
-      className={className}
       type="single"
+      className={className}
+      defaultValue={openedSection}
       collapsible>
       {children}
     </RadixAccordion.Root>
@@ -17,13 +25,13 @@ export function Accordion({ children, className }: PropsWithChildren<{ className
 }
 
 
-export function Panel({ value, title, children }: PropsWithChildren<{ value?: string, title: string }>) {
+export function Panel({ id, value, title, children }: PropsWithChildren<{ id?: string, value?: string, title: string }>) {
   return (
     <RadixAccordion.Item value={value ?? title}>
       <RadixAccordion.Header
         className="py-2 lg:py-4 text-5xl font-body border-b border-slate-800 dark:border-white dark:text-white">
         <RadixAccordion.Trigger className="group w-full flex gap-x-2 items-center justify-between">
-          <span className="ml-4">{title}</span>
+          <span id={id} className="ml-4">{title}</span>
           <PlusMinusIcon className="w-8 h-8" aria-hidden />
         </RadixAccordion.Trigger>
       </RadixAccordion.Header>

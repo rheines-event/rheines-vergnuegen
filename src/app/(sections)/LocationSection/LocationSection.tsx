@@ -1,6 +1,6 @@
-import { SectionImage } from '@rheine/app/(components)/SectionImage';
+import { Suspense } from 'react';
+
 import { SectionTitle } from '@rheine/app/(components)/SectionTitle';
-import { MarkerIcon } from '@rheine/app/(components)/MarkerIcon';
 
 import * as FancyAccordion from './FancyAccordion';
 import { AmphitheaterDetails } from './AmphitheaterDetails';
@@ -8,6 +8,7 @@ import { ClubraumDetails } from './ClubraumDetails';
 import { EventkuecheDetails } from './Eventkueche';
 import { OpenSpaceDetails } from './OpenSpaceDetails';
 import { JagdzimmerDetails } from './JagdzimmerDetails';
+import { Wordgrid } from './Wordgrid';
 
 
 export function LocationSection() {
@@ -17,44 +18,48 @@ export function LocationSection() {
       <SectionTitle id="location">Location</SectionTitle>
 
       <p>
-        Die Rheines-Event GmbH verwandelt fünf ehemalige Squash-Courts
-        in einen lebendigen Begegnungsort mit über <span className="font-medium dark:text-white">500 m² Nutzfläche.</span>
+        Der ideale Ort, um Geburtstage, Hochzeiten oder geschäftliche Anlässe zu etwas gewinnbringendem 
+        für alle Gäste und Teilnehmer werden zu lassen &ndash;<span className="ml-2.5">a place to remember!</span>
       </p>
 
-      <SectionImage
-        src="/office.jpg"
-        alt="Unsere Officeräume"
-        align="end"
-        className="mb-8"
-        caption={(
-          <figcaption className="flex gap-x-2 items-center">
-            <MarkerIcon className="w-4 h-4" />
-            <span>Hafenbahn 12, 848431 Rheine</span>
-          </figcaption>
-        )}
-        />
+      <Wordgrid />
 
-      <p>
-        Innovativ gestaltete Gruppenräume neben einem Auditorium mit State of the Art Internet-Präsentationstechnik.
-      </p>
-
-      <FancyAccordion.Accordion className="w-full -ml-4 my-16 lg:my-24 space-y-2">
-        <FancyAccordion.Panel title="Clubraum">
-          <ClubraumDetails />
-        </FancyAccordion.Panel>
-        <FancyAccordion.Panel title="Jagdzimmer">
-          <JagdzimmerDetails />
-        </FancyAccordion.Panel>
-        <FancyAccordion.Panel title="Eventküche">
-          <EventkuecheDetails />
-        </FancyAccordion.Panel>
-        <FancyAccordion.Panel title="Amphitheater">
-          <AmphitheaterDetails />
-        </FancyAccordion.Panel>
-        <FancyAccordion.Panel title="Open Space">
-          <OpenSpaceDetails />
-        </FancyAccordion.Panel>
-      </FancyAccordion.Accordion>
+      <Suspense>
+        <FancyAccordion.Accordion
+          className="w-full -ml-4 my-16 lg:my-24 space-y-2"
+          searchParamName="location-accordion">
+          <FancyAccordion.Panel
+            id="location-clubraum"
+            value="clubraum"
+            title="Clubraum">
+            <ClubraumDetails />
+          </FancyAccordion.Panel>
+          <FancyAccordion.Panel
+            id="location-jagdzimmer"
+            value="jagdzimmer"
+            title="Jagdzimmer">
+            <JagdzimmerDetails />
+          </FancyAccordion.Panel>
+          <FancyAccordion.Panel
+            id="location-eventkueche"
+            value="eventkueche"
+            title="Eventküche">
+            <EventkuecheDetails />
+          </FancyAccordion.Panel>
+          <FancyAccordion.Panel
+            id="location-amphitheater"
+            value="amphitheater"
+            title="Amphitheater">
+            <AmphitheaterDetails />
+          </FancyAccordion.Panel>
+          <FancyAccordion.Panel
+            id="location-open-space"
+            value="open-space"
+            title="Open Space">
+            <OpenSpaceDetails />
+          </FancyAccordion.Panel>
+        </FancyAccordion.Accordion>
+      </Suspense>
 
     </article>
   );

@@ -3,9 +3,9 @@ export default function Imprint() {
   return (
     <main className="flex flex-col lg:max-w-4xl xl:max-w-6xl lg:mx-auto min-h-screen lg:px-0 px-4 pt-12 pb-32 dark:bg-[#171717] text-slate-800 dark:text-slate-100 font-sans">
 
-      <h2 className="my-16 text-6xl tracking-tighter font-serif italic font-light">
+      <h1 className="my-16 text-6xl tracking-tighter font-serif italic font-light">
         Impressum
-      </h2>
+      </h1>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3">
 
@@ -53,7 +53,7 @@ export default function Imprint() {
       </div>
 
       <div className="mt-8">
-        <h4 className="mb-2 font-serif text-2xl font-light italic">
+        <h4 className="mb-6 font-serif text-2xl font-light italic">
           Disclaimer & Rechtliche Hinweise
         </h4>
 
@@ -87,6 +87,41 @@ export default function Imprint() {
           Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
         </p>
 
+      </div>
+
+      <div className="mt-8">
+        <h4 className="mb-2 font-serif text-2xl font-light italic">
+          Drittanbieter Lizenzen
+        </h4>
+
+        <h6 className="mt-6 mb-2 text-lg font-medium">Icons</h6>
+        <p className="mt-4">
+          <span className="font-medium">Heroicons</span> (<a href="https://heroicons.com/" target="_blank" rel="noopener noreferrer">https://heroicons.com/</a>)
+        </p>
+        <p className="mb-6">Lizensiert unter:</p>
+        <p className="text-sm italic">
+          MIT License
+          <br/><br/>
+          Copyright (c) 2020 Refactoring UI Inc.
+          <br/><br/>
+          Permission is hereby granted, free of charge, to any person obtaining a copy
+          of this software and associated documentation files (the "Software"), to deal
+          in the Software without restriction, including without limitation the rights
+          to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+          copies of the Software, and to permit persons to whom the Software is
+          furnished to do so, subject to the following conditions:
+          <br/><br/>
+          The above copyright notice and this permission notice shall be included in all
+          copies or substantial portions of the Software.
+          <br/><br/>
+          THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+          IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+          FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+          AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+          LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+          OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+          SOFTWARE.
+        </p>
       </div>
 
     </main>

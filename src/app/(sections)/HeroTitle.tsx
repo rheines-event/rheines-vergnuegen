@@ -24,7 +24,7 @@ export function HeroTitle() {
       </motion.h2>
       <h1 className="sr-only">R(h)eines Vergnügen</h1>
       <h2 className="w-fit relative -mb-8 text-[80px] sm:text-[96px] md:text-[128px] lg:text-[160px] leading-[1.1] h-26 md:h-32 lg:h-40 tracking-tighter text-white">
-        <AnimatedLetters text="R(h)eines" charClassName="z-10" /><br/>
+        <AnimatedLetters text="Rheines" charClassName="z-10" /><br/>
         <motion.svg
           aria-hidden="true"
           viewBox="0 0 418 42"
@@ -83,7 +83,11 @@ function AnimatedLetters({ text, charClassName }: { text: string, charClassName?
         <motion.span
           transition={{ delay: i * 0.1 }}
           variants={letterVariants}
-          className={`${charClassName} last:pr-1`}
+          className={`
+            ${charClassName}
+            ${char === 'h' ? 'text-gray-100 opacity-50' : ''}
+            last:pr-1`
+          }
           key={`${text}-char-at-${i}`}>
           {char}
         </motion.span>

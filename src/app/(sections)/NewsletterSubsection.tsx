@@ -16,7 +16,7 @@ export function NewsletterSubsection() {
         <div className="mb-16">
 
           <SectionImage
-            src="/newsletter.png"
+            src="/newsletter-thumbnail.png"
             alt="Unser Newsletter"
             className="!my-0"
             caption={
