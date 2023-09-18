@@ -79,7 +79,7 @@ function WordGridTile({ src, alt, caption, href, desktopOnly }: WordGridTileProp
         loading="lazy"
         className="object-cover brightness-50 hover:brightness-75 grayscale hover:grayscale-0 transition-all" />
       <div className="absolute bottom-0 inset-x-0 m-4 group-hover:ml-5 transition-all">
-        <h4 className="text-2xl font-light pl-1">
+        <h4 className="text-white text-2xl font-light pl-1">
           {caption}
         </h4>
       </div>
