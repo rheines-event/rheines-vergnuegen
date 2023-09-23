@@ -30,8 +30,7 @@ export function VisionSection() {
 
       <h6 className="py-16 text-center text-4xl font-display">
         Klein &amp; fein, <br />
-        fernab von Masse <br />
-        ohne Klasse
+        fernab von Masse
       </h6>
 
     </article>
