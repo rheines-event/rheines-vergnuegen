@@ -30,7 +30,7 @@ function Address() {
         href="https://goo.gl/maps/eosGBqKbmJEG2ter5"
         className="inline-flex gap-x-2 items-center underline underline-offset-4 mb-1">
         <MarkerIcon className="w-4 h-4" />
-        <span className="font-sans font-light text-lg">Hafenbahn 8, 848431 Rheine</span>
+        <span className="font-sans font-light text-lg">Hafenbahn 8, 48431 Rheine</span>
       </a>
       <p className="flex w-fit gap-x-2 items-center font-light text-lg">
         <PhoneIcon className="w-4 h-4" />
