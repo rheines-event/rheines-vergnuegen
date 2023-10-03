@@ -107,10 +107,16 @@ function ContactFormUseCase() {
   const params = useSearchParams();
   const inquiry = params.get('cta') as Reason | null ?? 'inquiry';
 
+  const submitContactFormData = async (value: FormValue) => fetch('/api/register', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(value)
+  });
+
   return (
     <ContactFormImplementation
       defaultReason={inquiry}
-      onSubmit={value => {}} />
+      onSubmit={submitContactFormData} />
   );
 }
 
