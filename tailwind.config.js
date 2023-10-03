@@ -15,7 +15,7 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-animate')],
   safelist: [
     'font-sans',
     'font-serif',

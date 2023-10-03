@@ -3,6 +3,8 @@
 import { useState } from 'react';
 
 import { useSearchParams } from 'next/navigation';
+import { useToast } from '../(components)/Toaster/use-toast';
+import { ToastProvider } from '../(components)/Toaster/toast';
 
 
 type Reason = 'booking' | 'inquiry' | 'other';
@@ -12,7 +14,7 @@ type FormValue = {
   content: string;
 };
 
-function ContactFormImplementation({ onSubmit, defaultReason = 'inquiry' }: { defaultReason?: Reason, onSubmit?: (value: FormValue) => void }) {
+function ContactFormImplementation({ onSubmit, defaultReason = 'inquiry' }: { defaultReason?: Reason, onSubmit?: (value: FormValue) => Promise<boolean> }) {
 
   const [reason, setReason] = useState<Reason | null>(null);
 
@@ -28,7 +30,11 @@ function ContactFormImplementation({ onSubmit, defaultReason = 'inquiry' }: { de
           content: event.currentTarget.content.value,
         };
 
-        if (onSubmit) { onSubmit(formValue); }
+        if (onSubmit) {
+          onSubmit(formValue).then(ok => {
+            if (ok) { (event.target as any).reset(); }
+          });
+        }
       }}>
 
       <div className="flex flex-col border border-[#171717] dark:border-white mb-16">
@@ -106,17 +112,41 @@ function ContactFormUseCase() {
 
   const params = useSearchParams();
   const inquiry = params.get('cta') as Reason | null ?? 'inquiry';
+  
+  const { toast } = useToast();
 
-  const submitContactFormData = async (value: FormValue) => fetch('/api/register', {
+  const submitContactFormData = async (value: FormValue) => fetch('/api/contact', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(value)
+  }).then(({ ok }) => {
+    (ok ? showSuccessToast : showFailureToast)();
+    return ok;
   });
 
+  const showSuccessToast = () =>
+    toast({
+      duration: 5000,
+      title: 'Anfrage versandt',
+      description: 'Ihre Anfrage wurde erfolgreich versandt. Wir werden uns in Kürze bei Ihnen melden.',
+      variant: 'default',
+    });
+    
+
+  const showFailureToast = () =>
+    toast({
+      duration: 5000,
+      title: 'Fehler',
+      description: 'Ihre Anfrage konnte nicht versandt werden. Bitte versuchen Sie es später erneut.',
+      variant: 'destructive',
+    });
+
   return (
-    <ContactFormImplementation
-      defaultReason={inquiry}
-      onSubmit={submitContactFormData} />
+    <ToastProvider>
+      <ContactFormImplementation
+        defaultReason={inquiry}
+        onSubmit={submitContactFormData} />
+    </ToastProvider>
   );
 }
 
