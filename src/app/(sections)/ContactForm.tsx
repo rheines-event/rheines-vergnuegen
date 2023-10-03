@@ -52,7 +52,7 @@ function ContactFormImplementation({ onSubmit, defaultReason = 'inquiry' }: { de
             type="email"
             name="email"
             required
-            className="peer w-full p-4 focus:outline-none dark:text-[#171717] dark:placeholder:text-slate-100 dark:bg-[#171717]"
+            className="peer w-full p-4 focus:outline-none dark:placeholder:text-slate-100 dark:bg-[#171717]"
             placeholder="Email Adresse" />
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +84,7 @@ function ContactFormImplementation({ onSubmit, defaultReason = 'inquiry' }: { de
       <div className="group-invalid:cursor-not-allowed">
         <button
           type="submit"
-          className="text-[#171717] group-invalid:pointer-events-none group-invalid:text-gray-400 ml-auto mr-4 hover:mr-2 transition-[margin-right] tracking-tighter leading-tight flex text-2xl items-center">
+          className="text-[#171717] group-valid:dark:text-white group-invalid:pointer-events-none group-invalid:text-gray-400 ml-auto mr-4 hover:mr-2 transition-[margin-right] tracking-tighter leading-tight flex text-2xl items-center">
           <span>Absenden</span>
           <svg
             className="inline-block ml-2"
