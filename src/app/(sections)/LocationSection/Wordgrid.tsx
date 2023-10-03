@@ -7,45 +7,33 @@ export function Wordgrid() {
     {
       src: '/herrenzimmer.jpg',
       alt: 'Unser Clubraum',
-      caption: 'Diskutieren',
-      href: '?location-accordion=clubraum#location-clubraum'
+      caption: 'Diskutieren'
     },
     {
       src: '/eventkueche.jpg',
       alt: 'Unsere Eventküche',
-      caption: 'Dinieren',
-      value: 'eventkueche',
-      href: '?location-accordion=eventkueche#location-eventkueche'
+      caption: 'Dinieren'
     },
     {
       src: '/open-space.jpg',
       alt: 'Unser Open Space',
       caption: 'Konzipieren',
-      value: 'open-space',
-      href: '?location-accordion=open-space#location-open-space'
     },
     {
       src: '/amphitheater.jpg',
       alt: 'Unser Amphitheater',
-      caption: 'Lernen',
-      value: 'amphitheater',
-      hash: 'location-amphitheater',
-      href: '?location-accordion=amphitheater#location-amphitheater'
+      caption: 'Lernen'
     },
     {
       src: '/jagdzimmer.png',
       alt: 'Unser Jagdzimmer',
       caption: 'Feiern',
-      value: 'jagdzimmer',
-      href: '?location-accordion=jagdzimmer#location-jagdzimmer',
       desktopOnly: true
     },
     {
       src: '/event-kitchen.jpg',
       alt: 'Unsere Eventküche',
       caption: 'Kochen',
-      value: 'eventkueche',
-      href: '?location-accordion=eventkueche#location-eventkueche',
       desktopOnly: true
     }
   ];
@@ -65,10 +53,9 @@ type WordGridTileProps = {
   href?: string;
   desktopOnly?: boolean;
 };
-function WordGridTile({ src, alt, caption, href, desktopOnly }: WordGridTileProps) {
+function WordGridTile({ src, alt, caption, desktopOnly }: WordGridTileProps) {
   return (
-    <a
-      href={href}
+    <div
       className={`group relative block aspect-square ${desktopOnly ? 'hidden lg:block' : ''}`}>
       <Image
         fill
@@ -83,6 +70,6 @@ function WordGridTile({ src, alt, caption, href, desktopOnly }: WordGridTileProp
           {caption}
         </h4>
       </div>
-    </a>
+    </div>
   );
 }

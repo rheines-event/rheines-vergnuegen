@@ -4,18 +4,20 @@ import { SectionImage } from '../(components)/SectionImage';
 import { useToast } from '../(components)/Toaster/use-toast';
 
 
-export function NewsletterForm({ onSubmit }: { onSubmit: (value: { email: string }) => Promise<boolean> }) {
+function NewsletterForm({ onSubmit }: { onSubmit: (value: { email: string }) => Promise<boolean> }) {
 
   return (
-    <form className="group" onSubmit={event => {
-      event.preventDefault();
+    <form
+      className="group"
+      onSubmit={event => {
+        event.preventDefault();
 
-      const formValue = { email: event.currentTarget.email.value };
+        const formValue = { email: event.currentTarget.email.value };
 
-      onSubmit(formValue).then(ok => {
-        if (ok) { (event.target as any).reset(); }
-      });      
-    }}>
+        onSubmit(formValue).then(ok => {
+          if (ok) { (event.target as any).reset(); }
+        });      
+      }}>
       <div className="mb-16">
 
         <SectionImage
@@ -72,6 +74,7 @@ export function NewsletterForm({ onSubmit }: { onSubmit: (value: { email: string
     </form>
   )
 }
+
 
 export function NewsletterFormUseCase() {
   

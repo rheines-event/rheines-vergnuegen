@@ -3,9 +3,6 @@ import { NewsletterFormUseCase } from './NewsletterForm';
 
 
 export function NewsletterSubsection() {
-
-
-
   return (
     <article className="relative lg:max-w-4xl lg:mx-auto lg:px-0 flex flex-col px-4 py-16 text-lg font-sans">
 
