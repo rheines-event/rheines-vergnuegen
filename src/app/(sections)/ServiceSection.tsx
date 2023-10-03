@@ -19,7 +19,7 @@ export function VisionSection() {
         caption="Business meets Quality-Time" />
 
       <p className="py-8">
-        Innovativ gestaltete Gruppenräume neben einem Auditorium mit State of the Art Internet-Präsentationstechnik.
+        Innovativ gestaltete Gruppenräume inklusive eines Auditoriums mit 50 Tribünensitzplätzen und State oft he Art Internet- und Präsentationstechnik in allen Räumen garantiert erstklassige Meetings und Konferenzen.
       </p>
 
       <SectionImage
