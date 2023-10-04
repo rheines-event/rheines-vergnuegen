@@ -18,7 +18,7 @@ export function LocationSection() {
       <SectionTitle id="location">Location</SectionTitle>
 
       <p>
-        Der ideale Ort, um Geburtstage, Hochzeiten oder geschäftliche Anlässe zu etwas gewinnbringendem 
+        Der ideale Ort, um Geburtstage, Hochzeiten oder geschäftliche Anlässe zu etwas Gewinnbringendem 
         für alle Gäste und Teilnehmer werden zu lassen &ndash;<span className="ml-2.5">a place to remember!</span>
       </p>
 
