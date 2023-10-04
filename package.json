@@ -11,10 +11,12 @@
   "dependencies": {
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-portal": "^1.0.3",
+    "@radix-ui/react-toast": "^1.1.5",
     "@react-google-maps/api": "^2.19.2",
     "@types/node": "20.4.6",
     "@types/react": "18.2.18",
     "@types/react-dom": "18.2.7",
+    "@vercel/postgres": "^0.5.0",
     "autoprefixer": "10.4.14",
     "framer-motion": "^10.15.0",
     "next": "^13.4.13-canary.15",
@@ -23,5 +25,8 @@
     "react-dom": "18.2.0",
     "tailwindcss": "3.3.3",
     "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "tailwindcss-animate": "^1.0.7"
   }
 }

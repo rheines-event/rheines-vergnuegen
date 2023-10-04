@@ -3,6 +3,8 @@
 import { useState } from 'react';
 
 import { useSearchParams } from 'next/navigation';
+import { useToast } from '../(components)/Toaster/use-toast';
+import { ToastProvider } from '../(components)/Toaster/toast';
 
 
 type Reason = 'booking' | 'inquiry' | 'other';
@@ -12,7 +14,7 @@ type FormValue = {
   content: string;
 };
 
-function ContactFormImplementation({ onSubmit, defaultReason = 'inquiry' }: { defaultReason?: Reason, onSubmit?: (value: FormValue) => void }) {
+function ContactFormImplementation({ onSubmit, defaultReason = 'inquiry' }: { defaultReason?: Reason, onSubmit?: (value: FormValue) => Promise<boolean> }) {
 
   const [reason, setReason] = useState<Reason | null>(null);
 
@@ -28,7 +30,11 @@ function ContactFormImplementation({ onSubmit, defaultReason = 'inquiry' }: { de
           content: event.currentTarget.content.value,
         };
 
-        if (onSubmit) { onSubmit(formValue); }
+        if (onSubmit) {
+          onSubmit(formValue).then(ok => {
+            if (ok) { (event.target as any).reset(); }
+          });
+        }
       }}>
 
       <div className="flex flex-col border border-[#171717] dark:border-white mb-16">
@@ -52,7 +58,7 @@ function ContactFormImplementation({ onSubmit, defaultReason = 'inquiry' }: { de
             type="email"
             name="email"
             required
-            className="peer w-full p-4 focus:outline-none dark:text-[#171717] dark:placeholder:text-slate-100 dark:bg-[#171717]"
+            className="peer w-full p-4 focus:outline-none dark:placeholder:text-slate-100 dark:bg-[#171717]"
             placeholder="Email Adresse" />
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +90,7 @@ function ContactFormImplementation({ onSubmit, defaultReason = 'inquiry' }: { de
       <div className="group-invalid:cursor-not-allowed">
         <button
           type="submit"
-          className="text-[#171717] group-invalid:pointer-events-none group-invalid:text-gray-400 ml-auto mr-4 hover:mr-2 transition-[margin-right] tracking-tighter leading-tight flex text-2xl items-center">
+          className="text-[#171717] group-valid:dark:text-white group-invalid:pointer-events-none group-invalid:text-gray-400 ml-auto mr-4 hover:mr-2 transition-[margin-right] tracking-tighter leading-tight flex text-2xl items-center">
           <span>Absenden</span>
           <svg
             className="inline-block ml-2"
@@ -106,11 +112,41 @@ function ContactFormUseCase() {
 
   const params = useSearchParams();
   const inquiry = params.get('cta') as Reason | null ?? 'inquiry';
+  
+  const { toast } = useToast();
+
+  const submitContactFormData = async (value: FormValue) => fetch('/api/contact', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(value)
+  }).then(({ ok }) => {
+    (ok ? showSuccessToast : showFailureToast)();
+    return ok;
+  });
+
+  const showSuccessToast = () =>
+    toast({
+      duration: 5000,
+      title: 'Anfrage versandt',
+      description: 'Ihre Anfrage wurde erfolgreich versandt. Wir werden uns in Kürze bei Ihnen melden.',
+      variant: 'default',
+    });
+    
+
+  const showFailureToast = () =>
+    toast({
+      duration: 5000,
+      title: 'Fehler',
+      description: 'Ihre Anfrage konnte nicht versandt werden. Bitte versuchen Sie es später erneut.',
+      variant: 'destructive',
+    });
 
   return (
-    <ContactFormImplementation
-      defaultReason={inquiry}
-      onSubmit={value => {}} />
+    <ToastProvider>
+      <ContactFormImplementation
+        defaultReason={inquiry}
+        onSubmit={submitContactFormData} />
+    </ToastProvider>
   );
 }
 
