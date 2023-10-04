@@ -27,7 +27,7 @@ function Address() {
       <Logo mode="responsive" />
       <h4 className="font-body text-3xl mt-4 mb-3">R(h)eines Vergnügen</h4>
       <a
-        href="https://goo.gl/maps/eosGBqKbmJEG2ter5"
+        href="https://www.google.com/maps/place/Hafenbahn+8,+48431+Rheine/@52.2705609,7.4409959,17z/"
         className="inline-flex gap-x-2 items-center underline underline-offset-4 mb-1">
         <MarkerIcon className="w-4 h-4" />
         <span className="font-sans font-light text-lg">Hafenbahn 8, 48431 Rheine</span>
