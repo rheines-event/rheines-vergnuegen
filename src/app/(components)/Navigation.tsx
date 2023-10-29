@@ -108,10 +108,10 @@ export function Navigation({ opened, onClose, className }: NavigationProps) {
                     variants={wordVariants}>
                     {title.split('').map((char, i) => (
                     <motion.span
-                      className="mb-4 text-[5rem] leading-[.85] tracking-tight -mx-px font-body"
+                      key={`${title}-char-at-${i}`}
+                      className="mb-4 text-[5rem] leading-[.85] tracking-tight -mx-px font-body overflow-visible"
                       transition={{ delay: i * 0.1 }}
-                      variants={letterVariants}
-                      key={`${title}-char-at-${i}`}>
+                      variants={letterVariants}>
                       {char}
                     </motion.span>
                   ))}
@@ -130,7 +130,7 @@ export function Navigation({ opened, onClose, className }: NavigationProps) {
                     variants={wordVariants}>
                     {title.split('').map((char, i) => (
                     <motion.span
-                      className="mb-4 text-5xl tracking-tight -mx-px font-serif italic font-thin"
+                      className="mb-4 text-5xl tracking-tight -mx-px font-serif italic font-thin overflow-visible"
                       transition={{ delay: i * 0.1 }}
                       variants={letterVariants}
                       key={`${title}-char-at-${i}`}>
