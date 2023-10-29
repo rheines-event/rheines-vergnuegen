@@ -88,7 +88,7 @@ function AnimatedLetters({ text, charClassName }: { text: string, charClassName?
           className={`
             ${charClassName}
             ${char === 'h' ? 'text-gray-100 opacity-50' : ''}
-            last:pr-1 overflow-visible
+            last:pr-1 !overflow-visible
           `}>
           {char}
         </motion.span>

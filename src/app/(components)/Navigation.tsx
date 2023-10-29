@@ -27,9 +27,10 @@ const LINKS = {
 type NavigationProps = {
   opened: boolean;
   onClose: () => void;
+  onScrollBehaviourChange?: (enabled: boolean) => void;
   className?: string;
 };
-export function Navigation({ opened, onClose, className }: NavigationProps) {
+export function Navigation({ opened, onClose, className, onScrollBehaviourChange = () => {} }: NavigationProps) {
 
   const containerVariant: Variants = {
     hidden: {
@@ -85,65 +86,75 @@ export function Navigation({ opened, onClose, className }: NavigationProps) {
             initial="hidden"
             animate="visible"
             exit="hidden"
+            onAnimationStart={animation => {
+              if (animation === 'visible') onScrollBehaviourChange(false);
+              else if (animation === 'hidden') onScrollBehaviourChange(true);
+            }}
             className={classNames(
               className,
-              "flex flex-col gap-y-4 px-4 pb-8 bg-white/70 dark:bg-[#171717]/70 backdrop-blur-md text-slate-800 dark:text-white z-50"
+              "w-full h-full pb-12 md:pb-16",
+              "bg-white/70 dark:bg-[#171717]/70 backdrop-blur-md text-slate-800 dark:text-white z-50"
             )}>
-            <div className="flex w-full justify-between pr-8 py-16">
-              <Link href="/">
-                <Logo mode="responsive" />
-              </Link>
-              <button onClick={onClose}>
-                <XMark className="w-10 h-10" />
-              </button>
-            </div>
-            {LINKS.primary.map(({ href, title }) => (
-              <Link
-                key={href}
-                href={href}
-                onClick={onClose}
-                className="hover:underline">
-                <motion.p
-                    className="flex overflow-hidden"
-                    variants={wordVariants}>
-                    {title.split('').map((char, i) => (
-                    <motion.span
-                      key={`${title}-char-at-${i}`}
-                      className="mb-4 text-[5rem] leading-[.85] tracking-tight -mx-px font-body overflow-visible"
-                      transition={{ delay: i * 0.1 }}
-                      variants={letterVariants}>
-                      {char}
-                    </motion.span>
-                  ))}
-                  </motion.p>
-              </Link>
-            ))}
-            <div className="pt-16">
-              {LINKS.secondary.map(({ href, title }) => (
+            <div className={classNames(
+              "h-full flex flex-col gap-y-4 px-4",
+              "md:max-w-2xl md:mx-auto md:px-0 md:gap-y-2",
+              "lg:max-w-4xl lg:mx-auto lg:px-0 lg:gap-y-2"
+            )}>
+              <div className="flex w-full justify-between pr-8 py-16">
+                <Link href="/">
+                  <Logo mode="responsive" />
+                </Link>
+                <button onClick={onClose}>
+                  <XMark className="w-10 h-10" />
+                </button>
+              </div>
+              {LINKS.primary.map(({ href, title }) => (
                 <Link
                   key={href}
                   href={href}
-                  className="hover:underline"
-                  onClick={onClose}>
+                  onClick={onClose}
+                  className="hover:underline">
                   <motion.p
-                    className="flex overflow-hidden"
-                    variants={wordVariants}>
-                    {title.split('').map((char, i) => (
-                    <motion.span
-                      className="mb-4 text-5xl tracking-tight -mx-px font-serif italic font-thin overflow-visible"
-                      transition={{ delay: i * 0.1 }}
-                      variants={letterVariants}
-                      key={`${title}-char-at-${i}`}>
-                      {char}
-                    </motion.span>
-                  ))}
-                  </motion.p>
+                      className="flex overflow-hidden"
+                      variants={wordVariants}>
+                      {title.split('').map((char, i) => (
+                      <motion.span
+                        key={`${title}-char-at-${i}`}
+                        className="mb-4 text-[5rem] leading-[.85] tracking-tight -mx-px font-body !overflow-visible"
+                        transition={{ delay: i * 0.1 }}
+                        variants={letterVariants}>
+                        {char}
+                      </motion.span>
+                    ))}
+                    </motion.p>
                 </Link>
-
               ))}
-            </div>
-            <div className="pt-16 pb-8 pr-4 text-end">
-              <CTOButton onClick={onClose} />
+              <div className="pt-16 lg:pt-8">
+                {LINKS.secondary.map(({ href, title }) => (
+                  <Link
+                    key={href}
+                    href={href}
+                    className="hover:underline"
+                    onClick={onClose}>
+                    <motion.p
+                      className="flex overflow-hidden"
+                      variants={wordVariants}>
+                      {title.split('').map((char, i) => (
+                      <motion.span
+                        className="mb-4 text-5xl tracking-tight -mx-px font-serif italic font-thin !overflow-visible"
+                        transition={{ delay: i * 0.1 }}
+                        variants={letterVariants}
+                        key={`${title}-char-at-${i}`}>
+                        {char}
+                      </motion.span>
+                    ))}
+                    </motion.p>
+                  </Link>
+                ))}
+              </div>
+              <div className="flex-1 pr-4 flex items-end justify-end">
+                <CTOButton onClick={onClose} />
+              </div>
             </div>
           </motion.nav>
         )}
@@ -173,7 +184,7 @@ function CTOButton({ onClick }: { onClick?: MouseEventHandler }) {
     <Link 
       onClick={onClick}
       href={{ pathname: '/', hash: 'contact', query: { cta: 'booking' } }}
-      className="bg-white/10 text-slate-800 px-4 py-2 font-sans text-xl mr-2 hover:mr-0 transition-[margin-right]">
+      className="text-slate-800 px-4 py-2 font-sans text-xl mr-2 hover:mr-0 transition-[margin-right]">
       Event veranstalten
       <svg
         className="inline-block ml-4"

@@ -44,13 +44,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html style={{ backgroundColor: '#171717' }} lang="de">
       <body
-        // style={{ margin: 'env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom)' }}
         className={classNames(
           bellefair.variable,
           forum.variable,
           kantumruyPro.variable,
           spectral.variable,
-          "relative font-body bg-[#171717]"
+          "relative font-body bg-[#171717] [&:has(.no-scroll)]:overflow-hidden"
         )}>
         <Titlebar className="fixed inset-x-0 top-0 z-50" />
         {children}
