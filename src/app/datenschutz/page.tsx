@@ -90,7 +90,7 @@ export default function Privacy() {
       <div className="p-4">
         <p className="mb-2">
           <span className="font-medium">RheinesEvent GmbH</span><br />
-          Hafenbahn 12,<br />
+          Hafenbahn 8,<br />
           48431 Rheine
         </p>
         <p>

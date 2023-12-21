@@ -7,6 +7,7 @@ import { classNames } from '@rheine/(utils)/classNames';
 
 
 export function HeroTitle() {
+
   const [animationDone, setAnimationDone] = useState(false);
 
   useEffect(() => {
@@ -81,14 +82,14 @@ function AnimatedLetters({ text, charClassName }: { text: string, charClassName?
       className="inline-flex overflow-hidden">
       {text.split('').map((char, i) => (
         <motion.span
+          key={`${text}-char-at-${i}`}
           transition={{ delay: i * 0.1 }}
           variants={letterVariants}
           className={`
             ${charClassName}
             ${char === 'h' ? 'text-gray-100 opacity-50' : ''}
-            last:pr-1`
-          }
-          key={`${text}-char-at-${i}`}>
+            last:pr-1 !overflow-visible
+          `}>
           {char}
         </motion.span>
       ))}
